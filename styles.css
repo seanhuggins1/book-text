@@ -1,0 +1,211 @@
+/*
+Variables
+*/
+:root {
+    --font-body: 'Quicksand';
+    --spacing: calc(5vw);
+    --font-default: 10px;
+}
+
+*, html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    --color-bg: #dffffc;
+
+    --color-darker: #040F0F;
+    --color-dark: #57737A;
+    --color-mid: #85BDBF;
+    --color-light: #C2FCF7;
+    --color-lighter: #C9FBFF;
+    
+    --color-text-light: #ddf0f1;
+    --color-text-dark: rgb(92, 97, 97);
+    font-family: var(--font-body);
+    font-size: var(--font-default);
+    background-color: var(--color-bg);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: var(--spacing);    /*Variable padding depending on screen size*/
+}
+
+/*Header*/
+header {
+    position: sticky;
+    padding: 0;
+    top: 0px;
+    width: 100vw;
+    height: fit-content;
+    background-color: var(--color-bg);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+.search-bar {
+    margin: 3px;
+    display: inline-flex;
+    width: 100%;
+}
+.search-icon {
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.search-input {
+    border: none;
+    margin: 10px 10px 10px 0px;
+    flex-grow: 1;
+    width: auto;
+    font-family: var(--font-body);
+    font-size: 1.5rem;
+    overflow: hidden;
+    background-color: var(--color-bg)
+}
+.search-input::placeholder {
+    font-family: var(--font-body);
+}
+.search-input:focus {
+    outline: none;
+    border: none;
+}
+
+.search-filter-button {
+    width: 10%;
+    min-width: fit-content;
+    height: 20px;
+    
+    border-radius: 30px;
+    
+    margin: 3px;
+    padding: 0 10px;
+
+    font-size: 1.5rem;
+    font-weight: 1000;
+    text-align: center;
+    line-height: 20px;
+    color: var(--color-text-light);
+    
+    background-color: var(--color-dark);
+    transition: all .2s ease-in-out;
+}
+.search-filter-button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+/*Profile Info*/
+.profile-info {
+    width: 100%;
+    margin: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-dark);
+}
+.profile-info img {
+    border-radius: 50%;
+    box-sizing: border-box;
+
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    width: auto;
+    height: auto;
+
+    border: solid 3px var(--color-text-light);
+    filter: drop-shadow(0px 0px 8px var(--color-darker));
+}
+.profile-description {
+    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.profile-info h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-text-light);
+}
+.profile-info h2.major {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+}
+.profile-info h2.exchanges {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-top: 10px;
+    color: var(--color-text-light);
+}
+.profile-info p {
+    font-size: 1.5rem;
+    color: var(--color-text-light);
+}
+
+/*LISTINGS*/
+.listings {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 1;
+    margin-top: 20px;
+    color: var(--color-text-dark);
+}
+.listings > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listings > div > h1 {
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+}
+.selling {
+    border-right: dashed 3px var(--color-darker);
+}
+.offer-card {
+    margin: 5px 0;
+    box-sizing: border-box;
+    width: 90%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 30px;
+    font-size: 1rem;
+    padding: 10px;
+
+
+    justify-content: space-between;
+    background-color: var(--color-text-light);
+    filter: drop-shadow(0px 0px 5px var(--color-dark));
+}
+.course-name {
+    font-size: 2.5rem;
+}
+.buy-arrow {
+    font-size: 3rem;
+    color: green;
+}
+.sell-arrow {
+    font-size: 3rem;
+    color: red;
+}
+.ellipsis {
+    font-size: 2rem;
+    margin: 5px 0;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 5px;
+}
