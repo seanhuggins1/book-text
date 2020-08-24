@@ -47,6 +47,7 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    filter: drop-shadow(0px 0px 8px var(--color-darker));
 }
 .search-bar {
     margin: 3px;
@@ -96,12 +97,14 @@ header {
 }
 .search-filter-button:hover {
     background-color: rgb(240, 240, 240);
+    color: var(--color-text-dark);
 }
 
 /*Profile Info*/
 .profile-info {
-    width: 100%;
-    margin: 5px;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100vw;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -119,7 +122,12 @@ header {
 
     border: solid 3px var(--color-text-light);
     filter: drop-shadow(0px 0px 8px var(--color-darker));
+    transition: all .5s ease-in-out;
 }
+.profile-info img:hover {
+    transform: rotate(360deg);
+}
+
 .profile-description {
     padding: 0 10px;
     display: flex;
@@ -152,10 +160,15 @@ header {
 .listings {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100vw;
     flex-grow: 1;
-    margin-top: 20px;
+    height: auto;
+
+    padding-top: 20px;
     color: var(--color-text-dark);
+    background-color: var(--color-bg);
+
+    filter: drop-shadow(0px 0px 8px var(--color-darker));
 }
 .listings > div {
     flex: 1;
@@ -166,9 +179,6 @@ header {
 .listings > div > h1 {
     font-size: 3.5rem;
     margin-bottom: 5px;
-}
-.selling {
-    border-right: dashed 3px var(--color-darker);
 }
 .offer-card {
     margin: 5px 0;
@@ -186,6 +196,11 @@ header {
     justify-content: space-between;
     background-color: var(--color-text-light);
     filter: drop-shadow(0px 0px 5px var(--color-dark));
+
+    transition: all .2s ease-in;
+}
+.offer-card:hover {
+    background-color: var(--color-mid);
 }
 .course-name {
     font-size: 2.5rem;
